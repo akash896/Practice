@@ -2,6 +2,8 @@ package Others;
 
 import java.util.Scanner;
 // combination operation problem
+// does only combination possible for addition and substraction
+
 public class CalculationPossible {
     int array[];
     String result;
