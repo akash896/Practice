@@ -1,7 +1,7 @@
 package Others;
 
 import java.util.Scanner;
-
+// combination operation problem
 public class CalculationPossible {
     int array[];
     String result;
@@ -38,7 +38,7 @@ public class CalculationPossible {
         }
         if (ob.start >= ob.array.length)
             return;
-        multiply(ob, num);
+
         add(ob, num);
         int s1 = ob.helper;
         substract(ob, num, s1);
