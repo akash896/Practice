@@ -13,11 +13,10 @@ public class LeftShift {
         int i = 0;
         while (k <= A.length){
                    A[i] = A[(i+n)%A.length];
-                   i = (i+4)%A.length;
+                   i = (i+n)%A.length;
                    k++;
         }
         A[i] = temp;
-
         for(i = 0 ; i<A.length ; i++)
             System.out.print (A[i] + " ");
     }

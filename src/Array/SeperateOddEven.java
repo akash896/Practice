@@ -5,29 +5,29 @@ package Array;
 public class SeperateOddEven {
 
     public static void main(String[] args) {
-        int A[] = new int[]{2,4,7,9,6,5,8,1};
+        int A[] = new int[]{2, 4, 7, 9, 6, 5, 8, 1};
         seperateOddEven(A);
     }
 
-    public static void seperateOddEven(int A[]){
+    public static void seperateOddEven(int A[]) {
         int i = 0;
-        int j = A.length-1;
-        int f1=0; int f2=0;
-        while(i<j || i!=j){
-            f1=0; f2=0;
-            if(A[i] % 2 == 0)
-            { i++;  f1=1;   }
-            if(A[j] % 2 == 1)
-            {   j--;     f2=1;  }
-            if(f1==0 && f2==0) {
-                int temp = A[i];
-                A[i] = A[j];
-                A[j] = temp;
+        int j = A.length - 1;
+        while (i < j) {
+            if (A[i] % 2 == 0) {
                 i++;
-                j--;
+                continue;
             }
+            if (A[j] % 2 == 1) {
+                j--;
+                continue;
+            }
+            int temp = A[i];
+            A[i] = A[j];
+            A[j] = temp;
+            i--;
+            j--;
         }
-        for(i=0; i<A.length;i++)
+        for (i = 0; i < A.length; i++)
             System.out.print(A[i] + " ");
     }
 }

@@ -24,7 +24,7 @@ public class FloydWarshall {
 
     public static void floydWarshall(int  graph[][], int V){
         int result[][] = new int [V][V];
-        // copying current graph to result graph as result will be altered to final answer
+        // copying current graph to result graph as result will be altered in final answer
         for(int i=0;i<V;i++)
             for(int j=0;j<V;j++)
                 result[i][j] = graph[i][j];

@@ -1,88 +1,80 @@
 package Others;
 
 import java.util.Scanner;
+
 // combination operation problem
 // does only combination possible for addition and substraction
 
 public class CalculationPossible {
-    int array[];
-    String result;
-    int start;
-    int helper;
-    boolean status;
-
-    CalculationPossible() {
-        this.array = new int[5];
-        for (int i = 0; i < 5; i++)
-            this.array[i] = 4;
-        this.result = "";
-        this.start = 0;
-        this.helper = 0;
-        this.status = false;
-    }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner((System.in));
         System.out.println("Enter the number: ");
         int num = scanner.nextInt();
         CalculationPossible ob = new CalculationPossible();
-        ob.findCombinations(ob, num);
-        if (ob.status == true)
-            System.out.println("Yes possible ");
-        else
-            System.out.println("Not possible ");
+        ob.findCombinations(4, 1, 5, num, "4 ");
     }
 
-    public void findCombinations(CalculationPossible ob, int num) {
-        if (ob.helper == num) {
-            System.out.println(ob.result);
-            ob.status = true;
+    public void findCombinations(int sum, int s, int d, int num, String res) {
+        if (sum == num) {
+            System.out.println(res);
         }
-        if (ob.start >= ob.array.length)
+        if (s >= d)
             return;
-
-        add(ob, num);
-        int s1 = ob.helper;
-        substract(ob, num, s1);
+        multiply(sum, s, d, num, res);
+        add(sum, s, d, num, res);
+        substract(sum, s, d, num, res);
+        divide(sum, s, d, num, res);
+        concatenation(sum, s, d, num, res);
+        //factorial(sum, s, d, num, res);
     }
 
-    public void add(CalculationPossible ob, int num) {
-        if (ob.helper > num)
-            return;
-        if (ob.start < ob.array.length) {
-            ob.helper = ob.helper + ob.array[ob.start++];
-            ob.result = ob.result + "+ 4 ";
-            findCombinations(ob, num);
+    public void add(int sum, int s, int d, int num, String res) {
+        if (s < d) {
+            sum = sum + 4;
+            res = res + "+ 4 ";
+            findCombinations(sum, s + 1, d, num, res);
         }
     }
 
-    public void substract(CalculationPossible ob, int num, int s1) {
-        if(ob.start >= ob.array.length)
-            return;
-        if (ob.start < ob.array.length) {
-            ob.helper = s1 - ob.array[ob.start++];
-            ob.result = ob.result + "- 4 ";
-            findCombinations(ob, num);
+    public void substract(int sum, int s, int d, int num, String res) {
+        if (s < d) {
+            sum = sum - 4;
+            res = res + "- 4 ";
+            findCombinations(sum, s + 1, d, num, res);
         }
     }
 
-    /*public static void main(String[] args) {
-        int A[] = new int[]{4,4,4,4,4};
-        int sum = 0;
-        int num = 16;
-        String s = "4 ";
-        findCombination(A,  1, sum, s, num);
-    }
-
-    public static void findCombination(int A[], int start, int sum, String s, int num){
-        if(sum  == num){
-            System.out.println(s);
-            return;
+    public void multiply(int sum, int s, int d, int num, String res) {
+        if (s < d) {
+            sum = sum * 4;
+            res = res + "* 4 ";
+            findCombinations(sum, s + 1, d, num, res);
         }
-        int add = addOp(A, start, sum, s, num);
-        int sub = subOp(A, start, add, s, num);
     }
 
-    public static void addOp(int A[], int start, int sum, )*/
+    public void divide(int sum, int s, int d, int num, String res) {
+        if (s < d) {
+            sum = sum / 4;
+            res = res + "/ 4 ";
+            findCombinations(sum, s + 1, d, num, res);
+        }
+    }
+
+    public void concatenation(int sum, int s, int d, int num, String res) {
+        if (s < d) {
+            sum = sum * 10 + 4;
+            res = res + "|| 4 ";
+            findCombinations(sum, s + 1, d, num, res);
+        }
+    }
 }
+
+//    public void factorial(int sum, int s, int d, int num, String res) {
+//        if (s < d) {
+//            sum = sum + 4;
+//            res = res + "+ 4 ";
+//            findCombinations(sum, s+1, d, num, res);
+//        }
+
 

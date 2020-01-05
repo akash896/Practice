@@ -146,6 +146,7 @@ public class AVLTree {
                 temp = null;
 //                root.left = deleteNode(root.left, temp.data);
             }
+
         }
 
         //root.height = max(height(root.left), height(root.right)) + 1;

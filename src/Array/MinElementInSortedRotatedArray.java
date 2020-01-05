@@ -4,10 +4,10 @@ public class MinElementInSortedRotatedArray {
 
     public static void main(String[] args) {
         int A[] = new int[]{8,9,10,1,2,3,4,5,6,7};
-        System.out.println(findmin(A,0,9));
+        System.out.println(findMin(A,0,9));
     }
 
-    public static int findmin(int A[], int low, int high){
+    public static int findMin(int A[], int low, int high){
        int mid;
        while(low<high){
            mid = (low+high)/2;
@@ -15,7 +15,6 @@ public class MinElementInSortedRotatedArray {
                low = mid+1;
            else
                high = mid;
-
        }
        return A[low];
     }

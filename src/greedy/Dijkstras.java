@@ -13,6 +13,7 @@ public class Dijkstras {
     }
 
     public static void dijkstras(int graph[][], int V){
+
         int key[] = new int[V];
         int parent[] = new int[V];
         boolean visited[] = new boolean[V];
@@ -23,8 +24,8 @@ public class Dijkstras {
         }
         key[0] = 0;
 
-        int e=0;
-        while(e<V-1){
+        int e=1;
+        while(e<=V-1){
             int u = findMin(key, visited, V);
             visited[u] = true;
             for(int j=0;j<V;j++){

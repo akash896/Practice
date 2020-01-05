@@ -1,7 +1,8 @@
 package Trees;
 
-public class CompleteTree {
+import Array.Test;
 
+public class CompleteTree {
     public static void main(String[] args) {
         Node root = null;
         int A[] = new int[]{2,1,3};
@@ -13,13 +14,14 @@ public class CompleteTree {
         System.out.println();
         System.out.println(isComplete(root));
     }
+
     public static int size(Node root){
         if(root==null)
             return 0;
         return 1+size(root.left)+size(root.right);
     }
 
-    public static boolean isComplete(Node root){
+       protected static boolean isComplete(Node root){
         if(root==null)
             return true;
         boolean Arr[] = new boolean[size(root)];

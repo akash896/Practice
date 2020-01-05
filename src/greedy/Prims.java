@@ -4,11 +4,11 @@ public class Prims {
 
     public static void main(String[] args) {
         int V= 5;
-        int graph[][] = new int[][] { { 0, 2, 0, 6, 0 },
-                                    { 2, 0, 3, 8, 5 },
-                                    { 0, 3, 0, 0, 7 },
-                                    { 6, 8, 0, 0, 9 },
-                                    { 0, 5, 7, 9, 0 } };
+        int graph[][] = new int[][] { { 0, 2, 999, 6, 999 },
+                                      { 2, 0, 3, 8, 5 },
+                                      { 999, 3, 0, 999, 7 },
+                                      { 6, 8, 999, 0, 9 },
+                                      { 999, 5, 7, 9, 0 } };
         prims(graph, V);
     }
 
@@ -23,12 +23,12 @@ public class Prims {
         }
         key[0] = 0;
 
-        int e=0;
-        while(e<V-1){
+        int e = 1;
+        while(e<=V-1){
             int u = findMin(key, visited, V);
             visited[u] = true;
             for(int j=0;j<V;j++){
-                if(graph[u][j]!=0 && !visited[j] && graph[u][j]<key[j]){
+                if(graph[u][j]!=999 && !visited[j] && graph[u][j]<key[j]){
                     key[j] = graph[u][j];
                     parent[j] = u;
 

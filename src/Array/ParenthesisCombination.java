@@ -4,10 +4,7 @@ public class ParenthesisCombination {
      static  int n = 2;
     static char str[] = new char[2*n];
     public static void main(String[] args) {
-
-
         parenthesis(0,n,0,0);
-
     }
 
     public static void parenthesis(int pos, int n, int open, int close) {

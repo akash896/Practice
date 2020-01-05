@@ -16,7 +16,7 @@ public class LRUPageReplacement {
 
         for(int i=0 ; i<A.length; i++){
             if(findPage(A[i])){
-                display("Hit1");
+                display("Hit ");
             }
             else{
                 if(q.size()<f) {
@@ -31,8 +31,6 @@ public class LRUPageReplacement {
                 }
             }
         }
-
-
     }// main ends
 
     public static boolean findPage(int a){

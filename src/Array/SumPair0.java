@@ -5,8 +5,8 @@ package Array;
 public class SumPair0 {
 
     public static void main(String[] args) {
-        int A[] = new int []{0,1,2,3,4,5,6};
-        findPairs(A , 5);
+        int A[] = new int []{0,4, 9, 1, -4, 3};
+        findPairs(A , 0);
     }
 
     public static void findPairs(int A[], int n){

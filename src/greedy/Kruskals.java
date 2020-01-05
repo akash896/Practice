@@ -2,8 +2,7 @@ package greedy;
 
 import java.util.Arrays;
 
-public class Kruskals {
-
+public class Kruskals{
     static class Edge{
         int src;
         int dest;
@@ -19,8 +18,6 @@ public class Kruskals {
         int parent;
         int rank;
     }
-
-
 
     public static void kruskals(Edge edges[]){
         int v = 4;
@@ -43,14 +40,14 @@ public class Kruskals {
                 }
             }
 
-        int e=0;
+        int e=1;
+            // minCount is used to retreive the smallest weight edge from the sorted edge array
             int minCount=0;
-        while(e<v-1){
+        while(e<=v-1){
             System.out.println("edge loop ");
             Edge minEdge = edges[minCount++];
             int x = find(minEdge.src, set);
             int y = find(minEdge.dest, set);
-            System.out.println(x +"  "+y);
             if(x!=y){
                 result[e++] = minEdge;
                 union(x, y, set);
@@ -67,6 +64,7 @@ public class Kruskals {
     }
 
     public static void union(int x, int y, Subset set[]){
+        // rank is used to make a tree like structure of union thus reducing time for find operation
         if(set[x].rank < set[y].rank)
             set[y].parent = x;
         else if(set[x].rank > set[y].rank)
