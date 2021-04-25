@@ -22,7 +22,7 @@ static Map<Integer, Node> map = new TreeMap<>();
         if(root == null){
             root = new Node(d);
             return root;
-        }
+        } 
         if(d < root.data)
             root.left = createTree(root.left, d);
         else

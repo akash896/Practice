@@ -8,15 +8,15 @@ public class FloydWarshall {
            10
         (0)------->(3)
         |         /|\
-        5 |          |
+      5 |          |
         |          | 1
-        \|/         |
-        (1)------->(2)
+       \|/         |
+       (1)------->(2)
            3           */
         int graph[][] = { {0,   5,  INF, 10},
-                {INF, 0,   3, INF},
-                {INF, INF, 0,   1},
-                {INF, INF, INF, 0}};
+                          {INF, 0,   3, INF},
+                          {INF, INF, 0,   1},
+                          {INF, INF, INF, 0}};
         int V = 4;
         FloydWarshall a = new FloydWarshall();
         a.floydWarshall(graph, V);

@@ -2,7 +2,8 @@ package Array;
 
 public class MinCoinChange {
     public static void main(String[] args) {
-        int A[] = {9,6,5,1};
+//        int A[] = {9,6,5,1};
+        int A[] = {1,5,6,9};
         System.out.println(findMinCoin(A, 11));
     }
 

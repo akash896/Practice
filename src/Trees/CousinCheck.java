@@ -43,7 +43,8 @@ public class CousinCheck {
     public static boolean isCousin(Node root, int a, int b){
         if(root==null)
             return false;
-        if(root.data==a || root.data==b || root.left.data==a || root.left.data==b || root.right.data==a || root.right.data==b)
+        if(root.data==a || root.data==b || root.left.data==a || root.left.data==b ||
+                root.right.data==a || root.right.data==b)
             return false;
         NodeInfo x = new NodeInfo(a, root.data, 1);
         NodeInfo y = new NodeInfo(b, root.data, 1);

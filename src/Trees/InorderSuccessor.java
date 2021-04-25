@@ -24,7 +24,7 @@ public class InorderSuccessor {
             root.right = createTree(root.right, d);
         return root;
 
-        complete it....................
+        //complete it....................
     }
 
 

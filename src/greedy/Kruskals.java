@@ -41,10 +41,10 @@ public class Kruskals{
             }
 
         int e=1;
-            // minCount is used to retreive the smallest weight edge from the sorted edge array
+            // minCount is used to retreizve the smallest weight edge from the sorted edge array
             int minCount=0;
         while(e<=v-1){
-            System.out.println("edge loop ");
+            //System.out.println("edge loop ");
             Edge minEdge = edges[minCount++];
             int x = find(minEdge.src, set);
             int y = find(minEdge.dest, set);
@@ -53,7 +53,7 @@ public class Kruskals{
                 union(x, y, set);
             }
         }
-        for(e=0; e<v-1;e++)
+        for(e=1; e<=v-1;e++)
             System.out.println(result[e].src + " - " + result[e].dest + "--> " + result[e].weight);
     }
 

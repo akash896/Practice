@@ -28,7 +28,7 @@ public class LoopPresence {
         head4.next = head5;
         head5.next = head6;
         head6.next = head7;
-        //head7.next = head4;
+        head7.next = head4;
         //display(head1);
         System.out.println(findloop(head1));
     }

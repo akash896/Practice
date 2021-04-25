@@ -1,7 +1,5 @@
 package Trees;
 
-import Array.Test;
-
 public class CompleteTree {
     public static void main(String[] args) {
         Node root = null;
@@ -24,7 +22,10 @@ public class CompleteTree {
        protected static boolean isComplete(Node root){
         if(root==null)
             return true;
+        // boolean default is false
         boolean Arr[] = new boolean[size(root)];
+
+        // arr will be all true if tree is complete
         inorder(root, Arr, 0);
         int f=0;
         for(boolean e:Arr){
